@@ -30,6 +30,10 @@
     "prettier/prettier": "error",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
     "react/jsx-filename-extension": "off"
   }
 }
