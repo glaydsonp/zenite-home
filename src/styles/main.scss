@@ -1,13 +1,14 @@
-@import './utils/functions';
-@import './utils/mixins';
-@import './utils/variables';
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/variables";
 
 #main {
   &__construction {
-    @include display-flex(space-evenly, center);
+    @include display-flex();
     flex-direction: column;
     height: 100vh;
-    width: 100vw;
+    max-width: 1440px;
+    margin: auto;
 
     svg {
       width: 100%;

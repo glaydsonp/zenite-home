@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from '../styles/global';
-import theme from '../styles/themes/dark.theme';
+import theme from '../styles/themes/main.theme';
 
 import '../styles/main.scss';
 

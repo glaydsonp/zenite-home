@@ -1,8 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-
-import OnConstructionIcon from '../assets/on-construction-undraw.svg';
+import { Main, Button, Buttons, H1 } from '../styles/main';
 
 const Home: React.FC = () => (
   <>
@@ -10,12 +8,27 @@ const Home: React.FC = () => (
       <title>Zenite Clean &#8211; Higienização e Limpeza</title>
     </Head>
 
-    <main id="main__construction">
-      <OnConstructionIcon />
-      <h3>Site currently on construction.</h3>
-      <Link href="about">About</Link>
-    </main>
+    <Main>
+      <H1>Para onde seria este serviço?</H1>
+      <Buttons>
+        <Button>
+          Minha casa
+        </Button>
+        <Button>
+          Minha empresa
+        </Button>
+      </Buttons>
+    </Main>
   </>
 );
+
+// const styles = {
+//   main: {
+//   },
+
+//   button: {
+//     backgroundColor: 'red',
+//   }
+// }
 
 export default Home;

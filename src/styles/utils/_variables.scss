@@ -2,6 +2,16 @@
 // App colors
 // ###
 
+$colors: (
+  "blue-light": #09d1d1,
+  "yellow": #ffec06,
+);
+
+$theme-colors: (
+  primary: map-get($colors, "blue-light"),
+  secondary: map-get($colors, "yellow"),
+);
+
 // ###
 // App fonts
 // ###

@@ -1,0 +1,6 @@
+@import "./variables";
+
+@function color($color) {
+  $colors: map-merge($colors, $theme-colors);
+  @return map-get($colors, $color);
+}
