@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 
 import styles from './header.module.scss';
+import ContactHeader from '../ContactHeader';
 
 interface IProps {
   type: 'transparent' | 'filled';
+  title: string;
 }
 
-const Header: React.FC<IProps> = ({ type }) => {
+const Header: React.FC<IProps> = ({ type, title }) => {
   let headerStyle = null;
   if (type === 'filled') {
     headerStyle = styles.filled;
@@ -17,6 +20,10 @@ const Header: React.FC<IProps> = ({ type }) => {
 
   return (
     <>
+      <NextSeo
+        title={title}
+        description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
+      />
       <header className={headerStyle}>
         <Link href="./institucional">
           <a>Institucional</a>
