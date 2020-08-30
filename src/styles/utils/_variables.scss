@@ -2,20 +2,34 @@
 // App colors
 // ###
 
+$blue-light: #09d1d1;
+$yellow: #ffec06;
+
 $colors: (
-  "blue-light": #09d1d1,
-  "yellow": #ffec06,
+  'blue-light': $blue-light,
+  'yellow': $yellow
 );
 
 $theme-colors: (
-  primary: map-get($colors, "blue-light"),
-  secondary: map-get($colors, "yellow"),
+  primary: map-get($colors, 'blue-light'),
+  secondary: map-get($colors, 'yellow')
 );
+
+$primary: $blue-light;
+$secondary: $yellow;
 
 // ###
 // App fonts
 // ###
 
+$font-primary: 'Roboto', sans-serif;
+
 // ###
 // App spacings
 // ###
+
+// ###
+// Utils
+// ###
+
+$box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

@@ -6,6 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
   body {
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
@@ -15,5 +16,14 @@ export default createGlobalStyle`
     max-width: 1440px;
     overflow-y: auto;
     margin: auto;
+  }
+
+  #__next {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
   }
   `;

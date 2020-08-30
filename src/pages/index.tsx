@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Main, Button, Buttons, H1 } from '../styles/main';
+
+import Link from 'next/link';
+import styles from '../styles/pages/index.module.scss';
 
 const Home: React.FC = () => (
   <>
@@ -8,27 +10,21 @@ const Home: React.FC = () => (
       <title>Zenite Clean &#8211; Higienização e Limpeza</title>
     </Head>
 
-    <Main>
-      <H1>Para onde seria este serviço?</H1>
-      <Buttons>
-        <Button>
-          Minha casa
-        </Button>
-        <Button>
-          Minha empresa
-        </Button>
-      </Buttons>
-    </Main>
+    <main className={styles.homepage}>
+      <div className={styles.homepage__overlay} />
+      <div className={styles.homepage__title}>
+        Para onde seria este serviço?
+      </div>
+      <div className={styles.homepage__buttons}>
+        <Link href="residencial">
+          <a>minha casa</a>
+        </Link>
+        <Link href="empresarial">
+          <a>minha empresa</a>
+        </Link>
+      </div>
+    </main>
   </>
 );
-
-// const styles = {
-//   main: {
-//   },
-
-//   button: {
-//     backgroundColor: 'red',
-//   }
-// }
 
 export default Home;
