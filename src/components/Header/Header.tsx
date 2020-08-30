@@ -24,6 +24,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
         title={title}
         description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
       />
+      <ContactHeader />
       <header className={headerStyle}>
         <Link href="./institucional">
           <a>Institucional</a>
