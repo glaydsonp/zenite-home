@@ -7,3 +7,110 @@
 .transparent {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.header {
+  @include display-flex(space-between, center);
+  transition: transform ease-in-out 0.5s;
+  // height: 0;
+
+  @media (max-width: 760px) {
+    @include display-flex(center, center);
+    flex-direction: column;
+  }
+
+  &__mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    z-index: 20;
+
+    svg {
+      width: 80%;
+      margin: 0 auto;
+      height: 100px;
+    }
+  }
+
+  &__overlay {
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background ease-in-out 0.5;
+  }
+
+  &__openMenu {
+    height: 50px;
+    width: 50px;
+    border: 2px solid $primary;
+    background: $primary;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include display-flex(space-evenly, center);
+    flex-direction: column;
+
+    > div {
+      width: 35px;
+      height: 5px;
+      background: #fff;
+    }
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px 0;
+    transition: background ease-in-out 0.5s;
+    background: inherit;
+    outline: none;
+
+    &:hover {
+      background: lighten($color: $primary, $amount: 35);
+      cursor: pointer;
+    }
+  }
+}
+
+.menuClose {
+  background: white;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.showMenu {
+  transform: translateX(0);
+}
+
+.hideMenu {
+  transform: translateX(-50vw);
+  z-index: 0;
+}
+
+.showOverlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hideOverlay {
+  background: rgba(0, 0, 0, 0);
+  display: none;
+  z-index: 0;
+}
