@@ -19,7 +19,9 @@ const ContactHeader: React.FC<IProps> = ({ menuMobile }) => {
   if (menuMobile) {
     return (
       <>
-        <header className={styles.container}>
+        <header
+          className={[styles.container, styles.container__mobile].join(' ')}
+        >
           <div className={styles.container__wrapper}>
             <div className={styles.container__wrapperItem}>
               <PhoneIcon />
@@ -31,6 +33,8 @@ const ContactHeader: React.FC<IProps> = ({ menuMobile }) => {
               <a href="#">
                 <InstagramIcon />
               </a>
+            </div>
+            <div className={styles.container__wrapperItem}>
               <a href="#">
                 <FacebookIcon />
               </a>

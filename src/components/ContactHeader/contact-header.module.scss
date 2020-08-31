@@ -4,7 +4,7 @@
   width: 100vw;
 
   &__wrapper {
-    @include display-flex(space-around, center);
+    @include display-flex(flex-end, center);
     flex-direction: row;
     width: 100%;
     margin: 0 auto;
@@ -12,6 +12,7 @@
     height: 50px;
 
     @media (min-width: 760px) {
+      @include display-flex(space-around, center);
       max-width: 700px;
     }
 
@@ -33,6 +34,17 @@
 
     svg {
       height: 30px;
+    }
+  }
+
+  &__mobile {
+    .container__wrapperItem {
+      height: 30px;
+      padding: 7px;
+      a {
+        margin: 0px;
+        height: 30px;
+      }
     }
   }
 }
