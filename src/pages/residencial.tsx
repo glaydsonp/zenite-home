@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeaderNavImages from '../components/HeaderNavImages';
 
-import { ImagensResidencial } from '../components/ImagesExport/ResidencialExporter';
+import { ImagensResidencial } from '../components/ImagesExport/ImagesExporter';
 
 const Residencial: React.FC = () => {
   const text = 'This is my Residencial Component';
