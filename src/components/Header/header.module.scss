@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .filled {
   background-color: #fff;
@@ -11,7 +11,6 @@
 .header {
   @include display-flex(space-between, center);
   transition: transform ease-in-out 0.5s;
-  // height: 0;
 
   @media (max-width: 760px) {
     @include display-flex(center, center);
@@ -25,17 +24,18 @@
     left: 0;
     width: 50vw;
     height: 100vh;
-    z-index: 20;
+    z-index: 50;
+    background: color(primary);
+    outline: none;
 
     svg {
       width: 80%;
-      margin: 0 auto;
       height: 100px;
     }
   }
 
   &__overlay {
-    z-index: 5;
+    z-index: 45;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -72,6 +72,7 @@
     transition: background ease-in-out 0.5s;
     background: inherit;
     outline: none;
+    color: #fff;
 
     &:hover {
       background: lighten($color: $primary, $amount: 35);
@@ -81,15 +82,16 @@
 }
 
 .menuClose {
-  background: white;
+  background-color: color(primary);
   outline: none;
   width: 35px;
   height: 35px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: relative;
   border: none;
   cursor: pointer;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 10px;
 
   svg {
     height: 30px;
@@ -103,7 +105,7 @@
 
 .hideMenu {
   transform: translateX(-50vw);
-  z-index: 0;
+  z-index: 50;
 }
 
 .showOverlay {
@@ -113,5 +115,5 @@
 .hideOverlay {
   background: rgba(0, 0, 0, 0);
   display: none;
-  z-index: 0;
+  z-index: 50;
 }

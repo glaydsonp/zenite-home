@@ -1,5 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
+import HeaderNavImages from '../components/HeaderNavImages';
+
+import { ImagensResidencial } from '../components/ImagesExport/ResidencialExporter';
 
 const Residencial: React.FC = () => {
   const text = 'This is my Residencial Component';
@@ -9,7 +12,10 @@ const Residencial: React.FC = () => {
         type="transparent"
         title="Zenite Clean - Higienização e Limpeza Residencial"
       />
-      <div>{text}</div>
+      <HeaderNavImages
+        title="Zenite Clean - Higienização e Limpeza Residencial"
+        images={ImagensResidencial}
+      />
     </>
   );
 };

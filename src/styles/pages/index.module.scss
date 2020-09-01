@@ -1,4 +1,4 @@
-@import '../main.scss';
+@import "../main.scss";
 
 .homepage {
   display: flex;
@@ -8,19 +8,17 @@
   height: 100vh;
   width: 100%;
   text-align: center;
-  background: url('../../assets/images/main-home-hero.jpg');
+  background: url("../../assets/images/main-home-hero.jpg");
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
 
   &__overlay {
     height: 100%;
-    width: 100%;
+    position: absolute;
+    width: 2000px;
     background-color: rgba(255, 236, 6, 0.8);
-    position: fixed;
     z-index: 10;
-    top: 0;
-    left: 0;
   }
 
   &__title {

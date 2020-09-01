@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import ContactHeader from '../ContactHeader';
 
-import Logo from '../../assets/logo.svg';
+import Logo from '../../assets/logo-white.svg';
 import CloseIcon from '../../assets/icons/close-icon.svg';
 
 import styles from './header.module.scss';
