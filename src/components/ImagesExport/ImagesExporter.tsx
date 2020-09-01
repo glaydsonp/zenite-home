@@ -16,10 +16,6 @@ export const ImagensResidencial = [
     image: ImagemResidencialPrincipal
   },
   {
-    id: 'r2',
-    image: ImagemResidencialPrincipal2
-  },
-  {
     id: 'r3',
     image: ImagemResidencial1
   },

@@ -32,7 +32,7 @@ const HeaderNavImages: React.FC<IProps> = ({ title, images }) => {
     setImage(imageUrl.image);
   }
 
-  const imagePosition = width > 1080 ? '0 -520px' : '0 -230px';
+  const imagePosition = width > 1080 ? '0 -620px' : '0 -230px';
 
   return (
     <>
@@ -40,7 +40,7 @@ const HeaderNavImages: React.FC<IProps> = ({ title, images }) => {
         title={title}
         description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
       />
-      <div className={styles.nav} style={{ backgroundImage: `url("${image}")`, backgroundPosition: imagePosition, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', width: '100%' }}>
+      <div className={styles.nav} style={{ backgroundImage: `url("${image}")`, backgroundPosition: imagePosition, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
         <div className={styles.nav__overlay}></div>
         <div className={styles.nav__content}>
           <Logo />
