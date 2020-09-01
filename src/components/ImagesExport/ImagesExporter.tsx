@@ -6,7 +6,7 @@ import ImagemResidencial3 from '../../assets/images/03-residencial-nautica.jpg';
 import ImagemResidencial4 from '../../assets/images/04-residencial-posobra.jpg';
 
 import ImagemEmpresarialPrincial from '../../assets/images/hero-empresarial.jpg';
-import ImagemEmpresarial1 from '../../assets/images/01-empresarial-limpeza.jpg'
+import ImagemEmpresarial1 from '../../assets/images/01-empresarial-limpeza.jpg';
 import ImagemEmpresarial2 from '../../assets/images/02-empresarial-higienizacao.jpg';
 import ImagemEmpresarial3 from '../../assets/images/03-empresarial-nautica.jpg';
 
@@ -50,4 +50,4 @@ export const ImagensIndustrial = [
     id: 'e4',
     image: ImagemEmpresarial3
   }
-]
+];

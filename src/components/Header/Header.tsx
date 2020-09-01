@@ -108,7 +108,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
           </button>
           <Logo />
           {menuList.map((menuItem) => (
-            <Link href={menuItem.link}>
+            <Link key={menuItem.id} href={menuItem.link}>
               <a
                 tabIndex={0}
                 onKeyPress={closeMenu}
@@ -146,7 +146,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
       <ContactHeader menuMobile={false} />
       <header className={[headerStyle, styles.header].join(' ')}>
         {menuList.map((menuItem) => (
-          <Link href={menuItem.link}>
+          <Link key={menuItem.id} href={menuItem.link}>
             <a>{menuItem.description}</a>
           </Link>
         ))}

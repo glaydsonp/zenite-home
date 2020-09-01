@@ -1,12 +1,4 @@
-@import "../../styles/main.scss";
-
-.filled {
-  background-color: #fff;
-}
-
-.transparent {
-  background-color: rgba(0, 0, 0, 0);
-}
+@import '../../styles/main.scss';
 
 .header {
   @include display-flex(space-between, center);
@@ -66,7 +58,6 @@
   }
 
   a {
-    width: 100%;
     text-align: center;
     text-decoration: none;
     padding: 7px 0;
@@ -75,9 +66,12 @@
     outline: none;
     color: #fff;
 
-    &:hover {
-      background: lighten($color: $primary, $amount: 35);
-      cursor: pointer;
+    @media (max-width: 760px) {
+      width: 100%;
+      &:hover {
+        background: lighten($color: $primary, $amount: 35);
+        cursor: pointer;
+      }
     }
   }
 }
@@ -87,12 +81,13 @@
   outline: none;
   width: 35px;
   height: 35px;
-  position: relative;
   border: none;
   cursor: pointer;
-  margin-top: 0;
-  margin-left: 0;
   padding: 10px;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
 
   svg {
     height: 30px;
@@ -117,4 +112,33 @@
   background: rgba(0, 0, 0, 0);
   display: none;
   z-index: 50;
+}
+
+.filled {
+  background-color: #fff;
+}
+
+.transparent {
+  @media (min-width: 760px) {
+    margin: auto;
+    @include display-flex(center, center);
+
+    a {
+      margin-top: 30px;
+      padding: 10px;
+      z-index: 100;
+      font-weight: 900;
+      text-shadow: $box-shadow;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:last-of-type {
+        background-color: $secondary;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+      }
+    }
+  }
 }

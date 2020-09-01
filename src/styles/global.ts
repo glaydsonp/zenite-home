@@ -4,11 +4,11 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    margin: auto;
+    box-sizing: border-box;
   }
 
   body {
-    background: ${(props) => props.theme.colors.background};
+    // background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
     height: 100%;

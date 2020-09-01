@@ -4,20 +4,14 @@ import HeaderNavImages from '../components/HeaderNavImages';
 
 import { ImagensResidencial } from '../components/ImagesExport/ImagesExporter';
 
-const Residencial: React.FC = () => {
-  const text = 'This is my Residencial Component';
-  return (
-    <>
-      <Header
-        type="transparent"
-        title="Zenite Clean - Higienização e Limpeza Residencial"
-      />
-      <HeaderNavImages
-        title="Zenite Clean - Higienização e Limpeza Residencial"
-        images={ImagensResidencial}
-      />
-    </>
-  );
-};
+const Residencial: React.FC = () => (
+  <>
+    <Header
+      type="transparent"
+      title="Zenite Clean - Higienização e Limpeza Residencial"
+    />
+    <HeaderNavImages images={ImagensResidencial} />
+  </>
+);
 
 export default Residencial;
