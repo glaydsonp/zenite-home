@@ -15,11 +15,16 @@ interface IProps {
 
 const HeaderNavImages: React.FC<IProps> = ({ title, images }) => {
   const [image, setImage] = useState('');
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    console.log('chamou esse fdp aqui')
     setImage(images.find(img => img.id === 'r-principal').image);
   }, [])
+
+  useEffect(() => {
+    setWidth(window.innerWidth)
+    console.log(width);
+  })
 
   const changeImage = (imageId: string) => {
     const imageUrl = images.find(img => img.id === imageId);
@@ -27,13 +32,15 @@ const HeaderNavImages: React.FC<IProps> = ({ title, images }) => {
     setImage(imageUrl.image);
   }
 
+  const imagePosition = width > 1080 ? '0 -520px' : '0 -230px';
+
   return (
     <>
       <NextSeo
         title={title}
         description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
       />
-      <div className={styles.nav} style={{ backgroundImage: `url("${image}")`, backgroundPosition: '0 -450px', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+      <div className={styles.nav} style={{ backgroundImage: `url("${image}")`, backgroundPosition: imagePosition, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
         <div className={styles.nav__overlay}></div>
         <div className={styles.nav__content}>
           <Logo />
