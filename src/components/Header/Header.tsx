@@ -144,7 +144,11 @@ const Header: React.FC<IProps> = ({ type, title }) => {
         description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
       />
       <ContactHeader menuMobile={false} />
-      <header className={[headerStyle, styles.header].join(' ')}>
+      <header
+        className={[headerStyle, styles.header, styles.header__desktop].join(
+          ' '
+        )}
+      >
         {menuList.map((menuItem) => (
           <Link key={menuItem.id} href={menuItem.link}>
             <a>{menuItem.description}</a>

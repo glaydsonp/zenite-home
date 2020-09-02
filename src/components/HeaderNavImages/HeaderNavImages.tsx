@@ -4,45 +4,50 @@ import Logo from '../../assets/logo-white.svg';
 
 import styles from './header-nav-images.module.scss';
 
+const TIMER_CAROUSEL = 5000;
+
+interface IImages {
+  id: string;
+  image: string;
+  active?: boolean;
+}
 interface IProps {
-  images: {
-    id: string;
-    image: string;
-  }[];
+  images: IImages[];
 }
 
 const HeaderNavImages: React.FC<IProps> = ({ images }) => {
-  const [image, setImage] = useState('');
-  // const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setImage(images.find((img) => img.id === 'r-principal').image);
-  }, []);
-
-  // useEffect(() => {
-  //   setWidth(window.innerWidth);
-  // });
+  const [image, setImage] = useState({
+    id: images[0].id,
+    image: images[0].image,
+    active: true
+  } as IImages);
 
   const changeImage = (imageId: string) => {
-    const imageUrl = images.find((img) => img.id === imageId);
-    setImage(imageUrl.image);
+    const imageSelected = images.find((img) => img.id === imageId);
+    imageSelected.active = true;
+    setImage(imageSelected);
   };
 
-  // const imagePosition = width > 1080 ? '0 -620px' : '0 -230px';
+  const slide = () => {
+    const imageSelectedIndex = images.findIndex((img) => img.id === image.id);
+    if (imageSelectedIndex < images.length - 1) {
+      setImage(images[imageSelectedIndex + 1]);
+    } else {
+      setImage(images[0]);
+    }
+  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      slide();
+    }, TIMER_CAROUSEL);
+    return () => clearTimeout(timer);
+  });
 
   return (
     <>
-      <div
-        className={styles.nav}
-        // style={{
-        //   backgroundImage: `url("${image}")`,
-        //   backgroundPosition: imagePosition,
-        //   backgroundRepeat: 'no-repeat',
-        //   backgroundSize: 'cover'
-        // }}
-      >
+      <div className={styles.nav}>
         <div className={styles.nav__container}>
-          <img src={image} alt="" />
+          <img src={image.image} alt="" />
         </div>
         <div className={styles.nav__overlay} />
         <div className={styles.nav__content}>
@@ -56,6 +61,9 @@ const HeaderNavImages: React.FC<IProps> = ({ images }) => {
           <div className={styles.nav__content__buttons}>
             {images.map((imgButton) => (
               <button
+                className={
+                  imgButton.id === image.id ? styles.button__active : null
+                }
                 type="button"
                 key={imgButton.id}
                 onClick={() => changeImage(imgButton.id)}
