@@ -6,8 +6,10 @@ import ContactHeader from '../ContactHeader';
 
 import Logo from '../../assets/logo-white.svg';
 import CloseIcon from '../../assets/icons/close-icon.svg';
+import LogoZenite from '../../assets/logo.svg';
 
 import styles from './header.module.scss';
+import MenuLink from '../MenuLink';
 
 interface IProps {
   type: 'transparent' | 'filled';
@@ -149,11 +151,24 @@ const Header: React.FC<IProps> = ({ type, title }) => {
           ' '
         )}
       >
-        {menuList.map((menuItem) => (
-          <Link key={menuItem.id} href={menuItem.link}>
-            <a>{menuItem.description}</a>
+        {type === 'filled' && (
+          <Link href="/residencial">
+            <a>
+              <LogoZenite />
+            </a>
           </Link>
-        ))}
+        )}
+        <div className={styles.header__navLinkWrapper}>
+          {menuList.map((menuItem) => (
+            <div className={styles.header__navLink}>
+              <MenuLink
+                key={menuItem.id}
+                descrition={menuItem.description}
+                link={menuItem.link}
+              />
+            </div>
+          ))}
+        </div>
       </header>
     </>
   );
