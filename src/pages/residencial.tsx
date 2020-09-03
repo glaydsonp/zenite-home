@@ -8,6 +8,7 @@ import ImagemResidencial1 from '../assets/images/01-residencial-limpeza.jpg';
 import ImagemResidencial2 from '../assets/images/02-residencial-higienizacao.jpg';
 import ImagemResidencial3 from '../assets/images/03-residencial-nautica.jpg';
 import ImagemResidencial4 from '../assets/images/04-residencial-posobra.jpg';
+import BackgroundImage from '../assets/images/backgroundImage1.jpg';
 
 const Residencial: React.FC = () => {
   const imagensResidencial = [
@@ -39,7 +40,7 @@ const Residencial: React.FC = () => {
         title="Zenite Clean - Higienização e Limpeza Residencial"
       />
       <HeaderNavImages images={imagensResidencial} />
-      <NossosServicos images={imagensResidencial} />
+      <NossosServicos images={imagensResidencial} backgroundImage={BackgroundImage} />
     </>
   );
 };

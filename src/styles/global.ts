@@ -14,6 +14,10 @@ export default createGlobalStyle`
     height: 100vh;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   #__next {
     z-index: 0;
   }

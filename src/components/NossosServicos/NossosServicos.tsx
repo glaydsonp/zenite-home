@@ -9,9 +9,12 @@ import styles from './nossos-servicos.module.scss';
 
 interface IProps {
   images: IImages[];
+  backgroundImage: string;
 }
 
-const NossosServicos: React.FC<IProps> = ({ images }) => {
+const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
+  console.log('image', backgroundImage)
+
   const [image, setImage] = useState({
     id: images[0].id,
     image: images[0].image,
@@ -54,44 +57,79 @@ const NossosServicos: React.FC<IProps> = ({ images }) => {
   return (
     <>
       <div className={styles.services}>
-        <div className={styles.services__text}>
-          <div className={styles.services__title}>
-            <span>Nossos serviços</span> <strong>01 Limpeza</strong>
+        <div className={styles.first__service}>
+          <div className={styles.first__service__text}>
+            <div className={styles.first__service__title}>
+              <span>Nossos serviços</span> <strong>01 Limpeza</strong>
+            </div>
+            <div className={styles.first__service__description}>
+              Nosso processo de lavagem para pisos externos não agride as
+              superfícies, excluindo o uso de materiais à base de solventes e
+              ácidos nas limpezas mais profundas. Para cada piso e pedras, são
+              aplicados os produtos específicos e respeitando o tempo de ação e
+              cura de cada um, todos produtos biodegradáveis, como por exemplo a
+              aplicação nos telhados.
           </div>
-          <div className={styles.services__description}>
-            Nosso processo de lavagem para pisos externos não agride as
-            superfícies, excluindo o uso de materiais à base de solventes e
-            ácidos nas limpezas mais profundas. Para cada piso e pedras, são
-            aplicados os produtos específicos e respeitando o tempo de ação e
-            cura de cada um, todos produtos biodegradáveis, como por exemplo a
-            aplicação nos telhados.
+          </div>
+          <div className={styles.first__service__carousel}>
+            <div className={styles.first__service__images}>
+              <img src={image.image} alt={image.id} />
+            </div>
+            <div className={styles.first__service__arrows}>
+              <button
+                className={styles.first__service__arrows_prev}
+                type="button"
+                aria-label="Imagem anterior"
+                onClick={() => {
+                  setImage(prevImage());
+                }}
+              >
+                <PreviousIcon />
+              </button>
+              <button
+                className={styles.first__service__arrows_next}
+                type="button"
+                aria-label="Próxima imagem"
+                onClick={() => {
+                  setImage(nextImage());
+                }}
+              >
+                <NextIcon />
+              </button>
+            </div>
           </div>
         </div>
-        <div className={styles.services__carousel}>
-          <div className={styles.services__images}>
-            <img src={image.image} alt={image.id} />
+
+        <div className={styles.other__services}>
+          <div className={styles.other__services__overlay}>
+            <img src={backgroundImage} alt="background" />
           </div>
-          <div className={styles.services__arrows}>
-            <button
-              className={styles.services__arrows_prev}
-              type="button"
-              aria-label="Imagem anterior"
-              onClick={() => {
-                setImage(prevImage());
-              }}
-            >
-              <PreviousIcon />
-            </button>
-            <button
-              className={styles.services__arrows_next}
-              type="button"
-              aria-label="Próxima imagem"
-              onClick={() => {
-                setImage(nextImage());
-              }}
-            >
-              <NextIcon />
-            </button>
+          <div className={styles.other__services__service}>
+            <div className={styles.image__card}>
+              <span>02 Higienização</span>
+              <img src={images[2].image} alt={image.id}></img>
+            </div>
+            <div className={styles.description}>
+              <span>Utilizamos na nossa formulação um poderoso agente bactericida que além de revitalizar o tecido, irá eliminar cerca de 90% dos agentes causadores dos processos alérgicos.</span>
+            </div>
+          </div>
+          <div className={styles.other__services__service__middle}>
+            <div className={styles.image__card}>
+              <span className={styles.middle__span}>03 Linha Náutica</span>
+              <img src={images[3].image} alt={image.id} />
+            </div>
+            <div className={styles.description}>
+              <span>Para garantir que os estofados permaneçam sempre novos, é importante a realização do nosso processo exclusivo de blindagem em tecidos náuticos.</span>
+            </div>
+          </div>
+          <div className={styles.other__services__service}>
+            <div className={styles.image__card}>
+              <span>04 Pós Obra</span>
+              <img src={images[4].image} alt={image.id} />
+            </div>
+            <div className={styles.description}>
+              <span>Nosso serviço de limpeza é desenvolvido de forma customizada para diversos segmentos do mercado, com soluções comprovadas e atestadas.</span>
+            </div>
           </div>
         </div>
       </div>
