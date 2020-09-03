@@ -9,7 +9,7 @@ import styles from './nossos-servicos.module.scss';
 
 interface IProps {
   images: IImages[];
-  backgroundImage: string;
+  backgroundImage?: string;
 }
 
 const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {

@@ -34,7 +34,7 @@ const Empresarial: React.FC = () => {
         title="Zenite Clean &#8211; Higienização e Limpeza Empresarial"
       />
       <HeaderNavImages images={imagensIndustrial} />
-      <NossosServicos images={imagensIndustrial} />
+      {/* <NossosServicos images={imagensIndustrial} /> */}
     </>
   );
 };
