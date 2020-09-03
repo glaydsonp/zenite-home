@@ -160,7 +160,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
         )}
         <div className={styles.header__navLinkWrapper}>
           {menuList.map((menuItem) => (
-            <div className={styles.header__navLink}>
+            <div key={menuItem.id} className={styles.header__navLink}>
               <MenuLink
                 key={menuItem.id}
                 descrition={menuItem.description}

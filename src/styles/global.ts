@@ -7,19 +7,14 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    // background: ${(props) => props.theme.colors.background};
+  html, body {
     color: ${(props) => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
-    height: 100%;
-    min-width: 280px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
   }
 
   #__next {
-    height: 100%;
-    width: 100%;
     z-index: 0;
   }
 
