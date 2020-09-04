@@ -43,7 +43,7 @@
         box-shadow: $box-shadow;
         background-color: #fff;
         display: none;
-        transition: max-height 0.3 ease;
+        transition: max-height 0.3s ease;
 
         &__text {
           padding: 10px;
