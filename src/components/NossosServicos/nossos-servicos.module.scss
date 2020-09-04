@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@import '../../styles/main.scss';
 
 .services {
   max-width: 1300px;
@@ -33,6 +33,7 @@
         max-width: 90%;
       }
     }
+
     &__title {
       width: 100%;
       display: flex;
@@ -120,120 +121,166 @@
       flex-direction: column;
       background-color: color(primary);
     }
+
     margin-top: 60px;
+
+    &__wrapper {
+      @include display-flex(center, center);
+      flex-wrap: wrap;
+    }
+
     &__overlay {
       position: absolute;
       margin-top: 200px;
       left: 0;
       z-index: -1;
       width: 100vw;
-      height: 80%;
+      height: 100%;
       margin-top: 100px;
-      background-image: url("../../assets/images/services-background.svg");
+      background-image: url('../../assets/images/services-background.svg');
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover;
-      @media (min-width: 1550px) {
-        background-repeat: round;
-      }
+
+      // @media (min-width: 1550px) {
+      //   background-repeat: round;
+      // }
     }
 
-    &__service,
-    &__service__middle {
+    &__service {
       @include display-flex(space-between, center);
-      flex: 1;
+      flex: 1 33%;
       flex-direction: column;
       width: 100%;
-      .image__card {
-        width: 100%;
-        padding: 0 10px;
-        @media (max-width: 700px) {
-          padding: 0;
+
+      @media (max-width: 760px) {
+        flex: 1 100%;
+        margin-bottom: 20px;
+      }
+
+      .image {
+        &__card {
+          position: relative;
+          width: 100%;
+          padding: 0 10px;
+
+          @media (max-width: 750px) {
+            padding: 0;
+            text-align: center;
+          }
+
+          @media (min-width: 751px) {
+            height: 500px;
+          }
+
+          img {
+            width: 100%;
+            height: 95%;
+            object-fit: cover;
+            border-radius: 20px;
+
+            @media (max-width: 760px) {
+              width: 90%;
+              height: 500px;
+            }
+          }
+
+          span {
+            position: absolute;
+            left: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            text-shadow: $box-shadow;
+          }
         }
-        .higienizacao,
-        .middle__span,
-        .posObra {
-          display: block;
+
+        &__description {
+          font-weight: normal;
+          padding: 10px 20px;
+          font-size: 1.5rem;
           text-align: center;
-          font-size: 48px;
-          font-weight: bold;
-          text-shadow: $box-shadow;
-          width: 100%;
-          height: 32.4rem;
-          background-position: 0 0;
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-radius: 23px;
-          padding: 15px 0;
-          @media (max-width: 700px) {
-            margin-top: 80px;
-            display: flex;
-            justify-content: center;
-            width: 100vw;
+        }
+      }
+
+      @media (min-width: 751px) {
+        .image__card {
+          height: 600px;
+        }
+
+        &:first-of-type,
+        &:last-of-type {
+          .image__card {
+            height: 520px;
+
+            span {
+              top: 10px;
+            }
           }
         }
 
-        .higienizacao {
-          background-image: url("../../assets/images/02-residencial-higienizacao.jpg");
-        }
-        .posObra {
-          background-image: url("../../assets/images/04-residencial-posobra.jpg");
-        }
-
-        .middle__span {
-          @include display-flex(center, flex-end);
-          width: 100%;
-          height: 35.9rem;
-          margin-top: -30px;
-          background-image: url("../../assets/images/03-residencial-nautica.jpg");
-          @media (max-width: 700px) {
-            margin-top: 80px;
-            display: flex;
-            justify-content: center;
-            width: 100vw;
-            padding: 20px;
+        &:nth-child(2) {
+          .image__card {
+            span {
+              bottom: 50px;
+            }
           }
         }
       }
-      .description {
-        margin-top: 15px;
-        color: #fff;
-        max-width: 23rem;
-        font-size: 24px;
-        text-align: center;
-        text-shadow: $box-shadow;
-        @media (max-width: 700px) {
-          padding-bottom: 15px;
+
+      @media (max-width: 751px) {
+        .image__card {
+          span {
+            bottom: 20px;
+          }
         }
       }
+
+      // .description {
+      //   margin-top: 15px;
+      //   color: #fff;
+      //   max-width: 23rem;
+      //   font-size: 24px;
+      //   text-align: center;
+      //   text-shadow: $box-shadow;
+
+      //   @media (max-width: 700px) {
+      //     padding-bottom: 15px;
+      //   }
+      // }
     }
 
-    &__service__middle {
-      img {
-        min-height: 575px;
-      }
-    }
+    // &__service__middle {
+    //   img {
+    //     min-height: 575px;
+    //   }
+    // }
   }
-  .dividers {
-    display: none;
-    @media (max-width: 700px) {
-      display: flex;
-      &__left {
-        flex: 1;
-        height: 40px;
-        background-color: color(primary);
-        margin-top: -20px;
-        z-index: -1;
-        transform: skewY(5deg);
-      }
-      &__right {
-        flex: 1;
-        height: 40px;
-        background-color: color(primary);
-        margin-top: -20px;
-        z-index: -1;
-        transform: skewY(-5deg);
-      }
-    }
-  }
+
+  // .dividers {
+  //   display: none;
+
+  //   @media (max-width: 700px) {
+  //     display: flex;
+
+  //     &__left {
+  //       flex: 1;
+  //       height: 40px;
+  //       background-color: color(primary);
+  //       margin-top: -20px;
+  //       z-index: -1;
+  //       transform: skewY(5deg);
+  //     }
+
+  //     &__right {
+  //       flex: 1;
+  //       height: 40px;
+  //       background-color: color(primary);
+  //       margin-top: -20px;
+  //       z-index: -1;
+  //       transform: skewY(-5deg);
+  //     }
+  //   }
+  // }
 }

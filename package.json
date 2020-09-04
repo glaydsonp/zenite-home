@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:export": "next build && next export"
+    "build:export": "next build && next export",
+    "lint": "eslint './src/*/**/*.{js,ts,tsx,scss}' --quiet --fix"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^9.5.2",

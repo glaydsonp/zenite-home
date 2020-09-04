@@ -92,48 +92,46 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
         </div>
 
         <div className={styles.other__services}>
-          <div className={styles.other__services__overlay}>
-          </div>
-          <div className={styles.other__services__service}>
-            <div className={styles.image__card}>
-              <span className={styles.higienizacao}>02 Higienização</span>
-            </div>
-            <div className={styles.description}>
-              <span>
+          <div className={styles.other__services__overlay} />
+          <div className={styles.other__services__wrapper}>
+            <div className={styles.other__services__service}>
+              <div className={styles.image__card}>
+                <img src={images[2].image} alt="Higieniação" />
+                <span className={styles.higienizacao}>02 Higienização</span>
+              </div>
+              <div className={styles.image__description}>
                 Utilizamos na nossa formulação um poderoso agente bactericida
                 que além de revitalizar o tecido, irá eliminar cerca de 90% dos
                 agentes causadores dos processos alérgicos.
-              </span>
+              </div>
             </div>
-          </div>
-          <div className={styles.other__services__service__middle}>
-            <div className={styles.image__card}>
-              <span className={styles.middle__span}>03 Linha Náutica</span>
-            </div>
-            <div className={styles.description}>
-              <span>
+            <div className={styles.other__services__service}>
+              <div className={styles.image__card}>
+                <img src={images[3].image} alt="Linha Náutica" />
+                <span className={styles.middle__span}>03 Linha Náutica</span>
+              </div>
+              <div className={styles.image__description}>
                 Para garantir que os estofados permaneçam sempre novos, é
                 importante a realização do nosso processo exclusivo de blindagem
                 em tecidos náuticos.
-              </span>
+              </div>
             </div>
-          </div>
-          <div className={styles.other__services__service}>
-            <div className={styles.image__card}>
-              <span className={styles.posObra}>04 Pós Obra</span>
-            </div>
-            <div className={styles.description}>
-              <span>
+            <div className={styles.other__services__service}>
+              <div className={styles.image__card}>
+                <img src={images[4].image} alt="Pós Obra" />
+                <span className={styles.posObra}>04 Pós Obra</span>
+              </div>
+              <div className={styles.image__description}>
                 Nosso serviço de limpeza é desenvolvido de forma customizada
                 para diversos segmentos do mercado, com soluções comprovadas e
                 atestadas.
-              </span>
+              </div>
             </div>
           </div>
         </div>
         <div className={styles.dividers}>
-          <div className={styles.dividers__left}></div>
-          <div className={styles.dividers__right}></div>
+          <div className={styles.dividers__left} />
+          <div className={styles.dividers__right} />
         </div>
       </div>
     </>
