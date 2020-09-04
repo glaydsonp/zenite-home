@@ -93,12 +93,10 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
 
         <div className={styles.other__services}>
           <div className={styles.other__services__overlay}>
-            <img src={backgroundImage} alt="background" />
           </div>
           <div className={styles.other__services__service}>
             <div className={styles.image__card}>
               <span>02 Higienização</span>
-              <img src={images[2].image} alt={image.id} />
             </div>
             <div className={styles.description}>
               <span>
@@ -111,7 +109,6 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           <div className={styles.other__services__service__middle}>
             <div className={styles.image__card}>
               <span className={styles.middle__span}>03 Linha Náutica</span>
-              <img src={images[3].image} alt={image.id} />
             </div>
             <div className={styles.description}>
               <span>
@@ -124,7 +121,6 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           <div className={styles.other__services__service}>
             <div className={styles.image__card}>
               <span>04 Pós Obra</span>
-              <img src={images[4].image} alt={image.id} />
             </div>
             <div className={styles.description}>
               <span>
@@ -134,6 +130,10 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
               </span>
             </div>
           </div>
+        </div>
+        <div className={styles.dividers}>
+          <div className={styles.dividers__left}></div>
+          <div className={styles.dividers__right}></div>
         </div>
       </div>
     </>

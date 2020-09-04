@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeaderNavImages from '../components/HeaderNavImages';
 import NossosServicos from '../components/NossosServicos';
+import OutrosServicos from '../components/OutrosServicos';
 import Footer from '../components/Footer';
 
 import ImagemEmpresarialPrincipal from '../assets/images/hero-empresarial.jpg';
@@ -45,6 +46,7 @@ const Empresarial: React.FC = () => {
         images={imagensIndustrial}
         backgroundImage={BackgroundImage}
       />
+      <OutrosServicos />
       <Footer />
     </>
   );

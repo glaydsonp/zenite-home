@@ -1,0 +1,95 @@
+@import "../main.scss";
+
+.main {
+  background-color: #f5f5f5;
+  padding: 5px 0 50px 0;
+}
+
+.container {
+  @include display-flex(space-between, flex-start);
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+  @media (max-width: 700px) {
+    padding: 50px;
+  }
+
+  &__title {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 700px) {
+      margin-top: 20px;
+    }
+    &__main {
+      color: $primary;
+      font-weight: bold;
+      font-size: 3rem;
+      @media (max-width: 700px) {
+        font-size: 2rem;
+      }
+    }
+    &__sub {
+      margin-top: 20px;
+      font-size: 28px;
+      color: $text-black;
+      @media (max-width: 700px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__infoButtons {
+    width: 100%;
+    &__button {
+      button {
+        @include display-flex(space-between, center);
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        width: 100%;
+        padding: 10px 40px;
+        border: none;
+        margin-top: 32px;
+        @media (max-width: 700px) {
+          padding: 10px 10px;
+        }
+        span {
+          font-size: 2.25rem;
+          color: $text-black;
+          @media (max-width: 700px) {
+            font-size: 0.8rem;
+          }
+        }
+        .arrow {
+          @media (max-width: 700px) {
+            display: none;
+          }
+        }
+      }
+
+      .infoArea {
+        border-top: 2px solid #cfd8dc;
+        padding: 30px;
+        box-shadow: $box-shadow;
+        background-color: #fff;
+        display: none;
+        transition: max-height 0.3 ease;
+        &__text {
+          padding: 10px;
+          color: $text-black;
+          @media (max-width: 700px) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      .display {
+        display: block;
+        @media (max-width: 700px) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

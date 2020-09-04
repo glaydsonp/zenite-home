@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .header {
   @include display-flex(space-between, center);
@@ -163,6 +163,7 @@
   @media (min-width: 760px) {
     background-color: #fff;
     justify-content: space-evenly;
+    padding-bottom: 20px;
   }
   @media (max-width: 760px) {
     background-color: $primary;

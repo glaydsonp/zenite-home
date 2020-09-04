@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeaderNavImages from '../components/HeaderNavImages';
 import NossosServicos from '../components/NossosServicos';
+import OutrosServicos from '../components/OutrosServicos';
 import Footer from '../components/Footer';
 
 import ImagemResidencialPrincipal from '../assets/images/hero-residencial.jpg';
@@ -45,6 +46,7 @@ const Residencial: React.FC = () => {
         images={imagensResidencial}
         backgroundImage={BackgroundImage}
       />
+      <OutrosServicos />
       <Footer />
     </>
   );

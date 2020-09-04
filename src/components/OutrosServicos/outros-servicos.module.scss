@@ -1,0 +1,43 @@
+@import "../../styles/main.scss";
+
+.container {
+  margin-top: 200px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1300px;
+    h3 {
+      color: $primary;
+      text-align: center;
+      font-size: 3rem;
+    }
+    &__lists {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      @media (max-width: 700px) {
+        flex-direction: column;
+      }
+      .list {
+        flex-direction: column;
+        margin-top: 20px;
+        max-width: 340px;
+        &__title {
+          font-size: 3rem;
+          color: $text-black;
+          font-weight: bold;
+        }
+        ul {
+          margin-top: 20px;
+          list-style: none;
+          text-align: left;
+          li {
+            color: $text-black;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
