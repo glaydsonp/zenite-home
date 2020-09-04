@@ -96,7 +96,7 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           </div>
           <div className={styles.other__services__service}>
             <div className={styles.image__card}>
-              <span>02 Higienização</span>
+              <span className={styles.higienizacao}>02 Higienização</span>
             </div>
             <div className={styles.description}>
               <span>
@@ -120,7 +120,7 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           </div>
           <div className={styles.other__services__service}>
             <div className={styles.image__card}>
-              <span>04 Pós Obra</span>
+              <span className={styles.posObra}>04 Pós Obra</span>
             </div>
             <div className={styles.description}>
               <span>

@@ -150,7 +150,9 @@
         @media (max-width: 700px) {
           padding: 0;
         }
-        span {
+        .higienizacao,
+        .middle__span,
+        .posObra {
           display: block;
           text-align: center;
           font-size: 48px;
@@ -158,7 +160,6 @@
           text-shadow: $box-shadow;
           width: 100%;
           height: 32.4rem;
-          background-image: url("../../assets/images/02-residencial-higienizacao.jpg");
           background-position: 0 0;
           background-repeat: no-repeat;
           background-size: cover;
@@ -171,11 +172,20 @@
             width: 100vw;
           }
         }
+
+        .higienizacao {
+          background-image: url("../../assets/images/02-residencial-higienizacao.jpg");
+        }
+        .posObra {
+          background-image: url("../../assets/images/04-residencial-posobra.jpg");
+        }
+
         .middle__span {
           @include display-flex(center, flex-end);
           width: 100%;
           height: 35.9rem;
           margin-top: -30px;
+          background-image: url("../../assets/images/03-residencial-nautica.jpg");
           @media (max-width: 700px) {
             margin-top: 80px;
             display: flex;
