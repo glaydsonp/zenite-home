@@ -1,0 +1,85 @@
+@import '../../styles/main.scss';
+
+.footer {
+  @include display-flex(space-evenly, center);
+  flex-direction: column;
+  width: 100vw;
+  height: 350px;
+  background-image: url('../../assets/images/footer-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  @media (max-width: 760px) {
+    height: 500px;
+  }
+
+  /* REMOVE */
+  margin-top: 500px;
+  /* REMOVE */
+
+  &__container {
+    @include display-flex();
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  &__limpeza,
+  &__zenite,
+  &__contato {
+    @include display-flex(center, flex-start);
+    flex-direction: column;
+
+    &_title {
+      font-size: 250%;
+      font-weight: bold;
+    }
+
+    &_container {
+      font-weight: normal;
+    }
+
+    &_item {
+      padding: 3px 0;
+    }
+  }
+
+  &__limpeza,
+  &__zenite {
+    flex: 1 25%;
+  }
+
+  &__contato {
+    flex: 1 50%;
+  }
+
+  &__bottom {
+    @include display-flex();
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 50px;
+  }
+
+  &__text {
+    @media (min-width: 770px) {
+      font-size: 140%;
+      margin-right: 20px;
+    }
+  }
+
+  &__socials {
+    @include display-flex(space-around, center);
+    width: 150px;
+
+    @media (max-width: 760px) {
+      margin: 10px 0;
+    }
+
+    &_item {
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

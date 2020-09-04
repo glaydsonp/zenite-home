@@ -9,12 +9,10 @@ import styles from './nossos-servicos.module.scss';
 
 interface IProps {
   images: IImages[];
-  backgroundImage?: string;
+  backgroundImage: string;
 }
 
 const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
-  console.log('image', backgroundImage)
-
   const [image, setImage] = useState({
     id: images[0].id,
     image: images[0].image,
@@ -69,7 +67,7 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
               aplicados os produtos específicos e respeitando o tempo de ação e
               cura de cada um, todos produtos biodegradáveis, como por exemplo a
               aplicação nos telhados.
-          </div>
+            </div>
           </div>
           <div className={styles.first__service__carousel}>
             <div className={styles.first__service__images}>
@@ -107,10 +105,14 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           <div className={styles.other__services__service}>
             <div className={styles.image__card}>
               <span>02 Higienização</span>
-              <img src={images[2].image} alt={image.id}></img>
+              <img src={images[2].image} alt={image.id} />
             </div>
             <div className={styles.description}>
-              <span>Utilizamos na nossa formulação um poderoso agente bactericida que além de revitalizar o tecido, irá eliminar cerca de 90% dos agentes causadores dos processos alérgicos.</span>
+              <span>
+                Utilizamos na nossa formulação um poderoso agente bactericida
+                que além de revitalizar o tecido, irá eliminar cerca de 90% dos
+                agentes causadores dos processos alérgicos.
+              </span>
             </div>
           </div>
           <div className={styles.other__services__service__middle}>
@@ -119,7 +121,11 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
               <img src={images[3].image} alt={image.id} />
             </div>
             <div className={styles.description}>
-              <span>Para garantir que os estofados permaneçam sempre novos, é importante a realização do nosso processo exclusivo de blindagem em tecidos náuticos.</span>
+              <span>
+                Para garantir que os estofados permaneçam sempre novos, é
+                importante a realização do nosso processo exclusivo de blindagem
+                em tecidos náuticos.
+              </span>
             </div>
           </div>
           <div className={styles.other__services__service}>
@@ -128,7 +134,11 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
               <img src={images[4].image} alt={image.id} />
             </div>
             <div className={styles.description}>
-              <span>Nosso serviço de limpeza é desenvolvido de forma customizada para diversos segmentos do mercado, com soluções comprovadas e atestadas.</span>
+              <span>
+                Nosso serviço de limpeza é desenvolvido de forma customizada
+                para diversos segmentos do mercado, com soluções comprovadas e
+                atestadas.
+              </span>
             </div>
           </div>
         </div>
