@@ -6,11 +6,24 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  body {
-    background: ${(props) => props.theme.colors.background};
+
+  html, body {
     color: ${(props) => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  #__next {
+    z-index: 0;
+  }
+
+  button {
+    outline: none;
+    cursor: pointer;
   }
   `;

@@ -5,12 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:export": "next build && next export",
+    "lint": "eslint './src/*/**/*.{js,ts,tsx,scss}' --quiet --fix"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^9.5.2",
     "next": "9.5.2",
     "next-images": "^1.4.1",
+    "next-seo": "^4.7.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10",

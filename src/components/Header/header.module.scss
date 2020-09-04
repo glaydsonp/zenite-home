@@ -1,0 +1,197 @@
+@import "../../styles/main.scss";
+
+.header {
+  @include display-flex(space-between, center);
+  transition: transform ease-in-out 0.5s;
+  max-width: 1440px;
+
+  @media (max-width: 760px) {
+    @include display-flex(center, center);
+    flex-direction: column;
+  }
+
+  &__mobile {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    z-index: 50;
+    background: color(primary);
+    outline: none;
+
+    svg {
+      width: 80%;
+      height: 100px;
+    }
+  }
+
+  &__overlay {
+    z-index: 45;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background ease-in-out 0.5;
+  }
+
+  &__openMenu {
+    height: 50px;
+    width: 50px;
+    border: 2px solid $primary;
+    background: $primary;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include display-flex(space-evenly, center);
+    flex-direction: column;
+
+    > div {
+      width: 35px;
+      height: 5px;
+      background: #fff;
+    }
+  }
+
+  &__linksContainer {
+    position: relative;
+  }
+
+  &__navLink {
+    position: relative;
+    z-index: 100;
+    margin-top: 15px;
+
+    &:last-of-type {
+      a {
+        background-color: $secondary;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__navLinkWrapper {
+    @include display-flex(space-evenly, center);
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    padding: 7px 0;
+    transition: background ease-in-out 0.5s;
+    background: inherit;
+    outline: none;
+    color: #fff;
+
+    @media (max-width: 760px) {
+      width: 100%;
+      &:hover {
+        background: lighten($color: $primary, $amount: 35);
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      height: 50px;
+      width: 120px;
+    }
+  }
+
+  &__desktop {
+    @media (min-width: 760px) {
+      margin: 7px auto 0;
+      @include display-flex(center, center);
+
+      a {
+        padding: 10px;
+        z-index: 100;
+        font-weight: 900;
+        text-shadow: $box-shadow;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.menuClose {
+  background-color: $primary;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.showMenu {
+  transform: translateX(0);
+}
+
+.hideMenu {
+  transform: translateX(-50vw);
+  z-index: 50;
+}
+
+.showOverlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hideOverlay {
+  background: rgba(0, 0, 0, 0);
+  display: none;
+  z-index: 50;
+}
+
+.filled {
+  @media (min-width: 760px) {
+    background-color: #fff;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+  }
+  @media (max-width: 760px) {
+    background-color: $primary;
+  }
+
+  .header {
+    &__navLink {
+      &:not(:last-child) {
+        a {
+          color: $text-black;
+          font-style: normal;
+          text-shadow: none;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.transparent {
+  @media (min-width: 760px) {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  @media (max-width: 760px) {
+    background-color: $primary;
+  }
+
+  .header_header__navLink {
+    margin-top: 30px;
+  }
+}

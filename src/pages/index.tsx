@@ -1,19 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
-import OnConstructionIcon from '../assets/on-construction-undraw.svg';
+import styles from '../styles/pages/index.module.scss';
 
 const Home: React.FC = () => (
   <>
-    <Head>
-      <title>Zenite Clean &#8211; Higienização e Limpeza</title>
-    </Head>
+    <NextSeo title="Zenite Clean &#8211; Higienização e Limpeza" />
 
-    <main id="main__construction">
-      <OnConstructionIcon />
-      <h3>Site currently on construction.</h3>
-      <Link href="about">About</Link>
+    <main className={styles.homepage}>
+      <div className={styles.homepage__overlay} />
+      <div className={styles.homepage__title}>
+        Para onde seria este serviço?
+      </div>
+      <div className={styles.homepage__buttons}>
+        <Link href="residencial">
+          <a>minha casa</a>
+        </Link>
+        <Link href="empresarial">
+          <a>minha empresa</a>
+        </Link>
+      </div>
     </main>
   </>
 );
