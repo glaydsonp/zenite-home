@@ -1,42 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import styles from '../styles/pages/guia-limpeza.module.scss';
-import ArrowIcon from '../assets/icons/info-arrow.svg';
+import Accordion from '../components/Accordion';
 
-interface Button {
-  btnText: string;
-  text: string;
+interface AccordionData {
   id: number;
+  description: string;
+  text: string;
 }
 
 const CleanessGuide: React.FC = () => {
-  const [showInfos, setShowInfos] = useState([])
-
-  const infos: Button[] = [
+  const infos: AccordionData[] = [
     {
-      btnText: 'Quais serviços nós oferecemos?',
-      text: 'Texto teste',
-      id: 1
+      id: 1,
+      description: 'Quais serviços nós oferecemos?',
+      text: 'Texto teste'
     },
     {
-      btnText: 'Como fazer orçamento?',
-      text: 'Texto teste',
-      id: 2
+      id: 2,
+      description: 'Como fazer orçamento?',
+      text: 'Texto teste'
     },
     {
-      btnText: 'Quais cidades atendemos?',
-      text: 'Texto teste',
-      id: 3
-    },
-  ]
-
-  const toggleInfos = (index: number) => {
-    if (showInfos.includes(index)) {
-      setShowInfos(showInfos.filter(i => i !== index));
-    } else {
-      setShowInfos([...showInfos, index])
+      id: 3,
+      description: 'Quais cidades atendemos?',
+      text: 'Texto teste'
     }
-  }
+  ];
 
   return (
     <>
@@ -47,31 +37,22 @@ const CleanessGuide: React.FC = () => {
       <div className={styles.main}>
         <div className={styles.container}>
           <div className={styles.container__title}>
-            <span className={styles.container__title__main}>Guia de Limpeza</span>
-            <span className={styles.container__title__sub}>Sabemos que podem surgir duvidas e por isso deixamos esse espaço</span>
+            <span className={styles.container__title__main}>
+              Guia de Limpeza
+            </span>
+            <span className={styles.container__title__sub}>
+              Sabemos que podem surgir duvidas e por isso deixamos esse espaço
+            </span>
           </div>
           <div className={styles.container__infoButtons}>
-            {infos.map((info, index) => {
-              return (
-                <>
-                  <div className={styles.container__infoButtons__button}>
-                    <button key={index} onClick={() => toggleInfos(index)}>
-                      <span>{info.btnText}</span>
-                      <div className={styles.arrow}>
-                        <ArrowIcon></ArrowIcon>
-
-                      </div>
-                    </button>
-
-                    <div className={`${styles.infoArea} ${showInfos.includes(index) ? styles.display : ''}`}>
-                      <p className={styles.infoArea__text}>
-                        {info.text}
-                      </p>
-                    </div>
-                  </div>
-                </>
-              )
-            })}
+            {infos.map((info) => (
+              <Accordion
+                key={info.id}
+                id={info.id}
+                description={info.description}
+                text={info.text}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -79,5 +60,29 @@ const CleanessGuide: React.FC = () => {
   );
 };
 
+/*
+<>
+  <div className={styles.container__infoButtons__button}>
+    <button
+      type="button"
+      key={info.id}
+      onClick={() => toggleInfos(index)}
+    >
+      <span>{info.description}</span>
+      <div className={styles.arrow}>
+        <ArrowIcon />
+      </div>
+    </button>
+
+    <div
+      className={`${styles.infoArea} ${
+        showInfos.includes(index) ? styles.display : ''
+      }`}
+    >
+      <p className={styles.infoArea__text}>{info.text}</p>
+    </div>
+  </div>
+</>
+*/
 
 export default CleanessGuide;
