@@ -13,17 +13,10 @@ interface IProps {
 }
 
 const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
-  const [image, setImage] = useState({
-    id: images[0].id,
-    image: images[0].image,
+  const [image, setImage] = useState<IImages>({
+    ...images[0],
     active: true
-  } as IImages);
-
-  const changeImage = (imageId: string) => {
-    const imageSelected = images.find((img) => img.id === imageId);
-    imageSelected.active = true;
-    setImage(imageSelected);
-  };
+  });
 
   const nextImage = () => {
     const imageSelectedIndex = images.findIndex((img) => img.id === image.id);
