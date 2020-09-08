@@ -1,10 +1,16 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .container {
-  margin-top: 50px;
+  margin-top: 200px;
 
   @media (min-width: 1500px) {
     margin-top: 250px;
+  }
+  @media (max-width: 1025px) {
+    margin-top: 350px;
+  }
+  @media (max-width: 770px) {
+    margin-top: 150px;
   }
 
   .content {
