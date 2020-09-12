@@ -1,0 +1,18 @@
+@import "../../styles/main.scss";
+
+.container {
+  &__googleMaps,
+  &__mail,
+  &__yellowPhone {
+    border: none;
+    background: none;
+  }
+
+  &__yellowPhone {
+    margin-top: 30px;
+    background-color: $secondary;
+    padding: 31px;
+    border-radius: 13px;
+    box-shadow: $box-shadow;
+  }
+}

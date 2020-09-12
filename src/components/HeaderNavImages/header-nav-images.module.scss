@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .nav {
   width: 100vw;
@@ -120,7 +120,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .nav {
     &__container {
       margin-top: 50px;
