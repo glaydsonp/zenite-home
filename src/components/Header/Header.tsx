@@ -17,7 +17,7 @@ interface IProps {
 }
 
 const Header: React.FC<IProps> = ({ type, title }) => {
-  const [windowWidth, setWidth] = useState(0);
+  // const [windowWidth, setWidth] = useState(0);
   const [isMenuOpen, setMenuState] = useState(false);
   const router = useRouter();
   const menuList = [
@@ -43,7 +43,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
     }
   ];
   let headerStyle = null;
-  let showMenuMobile = false;
+  // let showMenuMobile = false;
 
   if (type === 'filled') {
     headerStyle = styles.filled;
@@ -51,9 +51,9 @@ const Header: React.FC<IProps> = ({ type, title }) => {
     headerStyle = styles.transparent;
   }
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  });
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // });
 
   const closeMenu = () => {
     setMenuState(false);
@@ -71,18 +71,34 @@ const Header: React.FC<IProps> = ({ type, title }) => {
     }, 200);
   };
 
-  if (windowWidth < 760) {
-    showMenuMobile = true;
-  }
+  // if (windowWidth < 760) {
+  //   showMenuMobile = true;
+  // }
 
-  if (showMenuMobile) {
-    // menu mobile
-    return (
-      <>
-        <NextSeo
-          title={title}
-          description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
-        />
+  // if (showMenuMobile) {
+  //   // menu mobile
+  //   return (
+  //     <>
+  //       <NextSeo
+  //         title={title}
+  //         description="A Zenite Clean é uma empresa
+  // que presta serviços de limpeza de ambientes ou estofados para terceiros."
+  //       />
+  //       <ContactHeader menuMobile />
+
+  //     </>
+  //   );
+  // }
+
+  return (
+    <>
+      <NextSeo
+        title={title}
+        description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
+      />
+
+      {/* header mobile */}
+      <div className={styles.menuMobile}>
         <ContactHeader menuMobile />
         <button
           onClick={openMenu}
@@ -135,41 +151,36 @@ const Header: React.FC<IProps> = ({ type, title }) => {
           ].join(' ')}
           aria-label="Close menu"
         />
-      </>
-    );
-  }
+      </div>
 
-  return (
-    <>
-      <NextSeo
-        title={title}
-        description="A Zenite Clean é uma empresa que presta serviços de limpeza de ambientes ou estofados para terceiros."
-      />
-      <ContactHeader menuMobile={false} />
-      <header
-        className={[headerStyle, styles.header, styles.header__desktop].join(
-          ' '
-        )}
-      >
-        {type === 'filled' && (
-          <Link href="/residencial">
-            <a>
-              <LogoZenite />
-            </a>
-          </Link>
-        )}
-        <div className={styles.header__navLinkWrapper}>
-          {menuList.map((menuItem) => (
-            <div key={menuItem.id} className={styles.header__navLink}>
-              <MenuLink
-                key={menuItem.id}
-                descrition={menuItem.description}
-                link={menuItem.link}
-              />
-            </div>
-          ))}
-        </div>
-      </header>
+      {/* header desktop */}
+      <div className={styles.menuDesktop}>
+        <ContactHeader menuMobile={false} />
+        <header
+          className={[headerStyle, styles.header, styles.header__desktop].join(
+            ' '
+          )}
+        >
+          {type === 'filled' && (
+            <Link href="/residencial">
+              <a>
+                <LogoZenite />
+              </a>
+            </Link>
+          )}
+          <div className={styles.header__navLinkWrapper}>
+            {menuList.map((menuItem) => (
+              <div key={menuItem.id} className={styles.header__navLink}>
+                <MenuLink
+                  key={menuItem.id}
+                  descrition={menuItem.description}
+                  link={menuItem.link}
+                />
+              </div>
+            ))}
+          </div>
+        </header>
+      </div>
     </>
   );
 };

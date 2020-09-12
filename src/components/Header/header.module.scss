@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@import '../../styles/main.scss';
 
 .header {
   @include display-flex(space-between, center);
@@ -11,6 +11,9 @@
   }
 
   &__mobile {
+    @media (min-width: 760px) {
+      display: none;
+    }
     background: white;
     position: absolute;
     top: 0;
@@ -28,6 +31,9 @@
   }
 
   &__overlay {
+    @media (min-width: 760px) {
+      display: none;
+    }
     z-index: 45;
     width: 100vw;
     height: 100vh;
@@ -38,6 +44,9 @@
   }
 
   &__openMenu {
+    @media (min-width: 760px) {
+      display: none;
+    }
     height: 50px;
     width: 50px;
     border: 2px solid $primary;
@@ -193,5 +202,18 @@
 
   .header_header__navLink {
     margin-top: 30px;
+  }
+}
+
+.menuMobile {
+  display: block;
+  @media (min-width: 760px) {
+    display: none;
+  }
+}
+.menuDesktop {
+  display: block;
+  @media (max-width: 759px) {
+    display: none;
   }
 }
