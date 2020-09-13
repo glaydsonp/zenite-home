@@ -4,7 +4,6 @@ import styles from '../styles/pages/contato.module.scss';
 import GoogleMapsImg from '../assets/icons/google-maps.svg';
 import MailImg from '../assets/icons/mail.jpg';
 import YellowPhoneImg from '../assets/icons/yellow-phone.jpg';
-import { useRouter } from 'next/router';
 import ContactButton from '../components/ContactButton';
 import FooterContact from '../components/FooterContact/FooterContact';
 
@@ -12,13 +11,10 @@ interface IButton {
   link: string;
   image: string;
   id: number;
-}[]
+}
 
 const Contact: React.FC = () => {
-  const text = 'This is my Contact Component';
-  const router = useRouter();
-
-  const buttons = [
+  const buttons: IButton[] = [
     {
       link: '#',
       image: GoogleMapsImg,
@@ -33,8 +29,8 @@ const Contact: React.FC = () => {
       link: '#2',
       image: YellowPhoneImg,
       id: 3
-    },
-  ]
+    }
+  ];
 
   return (
     <>
@@ -46,7 +42,10 @@ const Contact: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.container__title}>
             <h3>Contato</h3>
-            <span>Selecione qual forma de contato prefere e pronto, cada botão te leva para algum lugar</span>
+            <span>
+              Selecione qual forma de contato prefere e pronto, cada botão te
+              leva para algum lugar
+            </span>
           </div>
           <div className={styles.container__buttons}>
             {buttons.map((button) => (

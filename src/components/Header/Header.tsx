@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -17,7 +17,6 @@ interface IProps {
 }
 
 const Header: React.FC<IProps> = ({ type, title }) => {
-  // const [windowWidth, setWidth] = useState(0);
   const [isMenuOpen, setMenuState] = useState(false);
   const router = useRouter();
   const menuList = [
@@ -43,17 +42,12 @@ const Header: React.FC<IProps> = ({ type, title }) => {
     }
   ];
   let headerStyle = null;
-  // let showMenuMobile = false;
 
   if (type === 'filled') {
     headerStyle = styles.filled;
   } else if (type === 'transparent') {
     headerStyle = styles.transparent;
   }
-
-  // useEffect(() => {
-  //   setWidth(window.innerWidth);
-  // });
 
   const closeMenu = () => {
     setMenuState(false);
@@ -70,25 +64,6 @@ const Header: React.FC<IProps> = ({ type, title }) => {
       router.push(link);
     }, 200);
   };
-
-  // if (windowWidth < 760) {
-  //   showMenuMobile = true;
-  // }
-
-  // if (showMenuMobile) {
-  //   // menu mobile
-  //   return (
-  //     <>
-  //       <NextSeo
-  //         title={title}
-  //         description="A Zenite Clean é uma empresa
-  // que presta serviços de limpeza de ambientes ou estofados para terceiros."
-  //       />
-  //       <ContactHeader menuMobile />
-
-  //     </>
-  //   );
-  // }
 
   return (
     <>
@@ -165,6 +140,7 @@ const Header: React.FC<IProps> = ({ type, title }) => {
             <Link href="/residencial">
               <a>
                 <LogoZenite />
+                {/* <img src={logoZeniteUrl} alt="Logo Zenite Clean" /> */}
               </a>
             </Link>
           )}
