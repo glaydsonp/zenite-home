@@ -24,7 +24,8 @@
     background: color(primary);
     outline: none;
 
-    svg {
+    svg,
+    img {
       width: 80%;
       height: 100px;
     }
@@ -105,7 +106,8 @@
       }
     }
 
-    svg {
+    svg,
+    img {
       height: 50px;
       width: 120px;
     }
@@ -143,7 +145,8 @@
   top: 10px;
   left: 10px;
 
-  svg {
+  svg,
+  img {
     height: 30px;
     width: 30px;
   }

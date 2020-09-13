@@ -49,7 +49,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="./favicon-filled.png" />
+          <link rel="icon" href="/favicon-filled.png" />
         </Head>
         <body>
           <Main />

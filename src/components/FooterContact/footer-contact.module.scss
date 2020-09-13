@@ -1,5 +1,19 @@
 @import '../../styles/main.scss';
 
+@keyframes opacityAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .footer {
   @include display-flex(space-evenly, center);
   flex-direction: column;
@@ -84,10 +98,35 @@
   }
 }
 
+.ModalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: 50vw;
+  height: 50vh;
+  transform: translate(-50%, -50%);
+  color: black;
+  padding: 0;
+  outline: none;
+
+  @media (max-height: 770px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 760px) {
+    width: 90vw;
+    height: 80vh;
+  }
+}
+
 .modal {
   height: 100%;
   width: 100%;
   position: relative;
+  background-color: $primary;
+  color: white;
 
   &__wrapper {
     @include display-flex();
@@ -103,23 +142,22 @@
       width: 100%;
       padding: 0 5% 25px;
       text-align: center;
-      color: $primary;
     }
 
     p {
-      color: $text-black;
       width: 100%;
       padding: 0 20% 25px;
       text-align: center;
+      font-size: 1.5rem;
     }
   }
 
   &__footer {
     @include display-flex();
-    background-image: url('../../assets/images/footer-background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    // background-image: url('../../assets/images/footer-background.svg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: 0 0;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -146,5 +184,30 @@
         border-color: darken($color: $secondary, $amount: 5);
       }
     }
+  }
+}
+
+.loading {
+  @include display-flex();
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: $primary;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  img {
+    height: 100px;
+    margin-bottom: 50px;
+
+    animation-name: opacityAnimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
   }
 }

@@ -2,26 +2,16 @@ import React, { FormEvent, useState } from 'react';
 import InputMask from 'react-input-mask';
 import Modal from 'react-modal';
 import axios from 'axios';
+import logoZenite from '../../assets/images/logo-zenite-verde.png';
 
 import styles from './footer-contact.module.scss';
 
-const modalStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    width: '50vw',
-    height: '50vh',
-    transform: 'translate(-50%, -50%)',
-    color: 'black',
-    padding: '0'
-  }
-};
+// Modal.setAppElement('#modalContatoZenite');
 
 const FooterContact: React.FC = () => {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [loading, setLoading] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -42,14 +32,16 @@ const FooterContact: React.FC = () => {
     if (phoneNumber === '' && phoneNumber.length <= 9) return;
 
     const formData = { name, phone_number: phoneNumber };
+
+    setLoading(true);
     axios
       .post(process.env.NEXT_PUBLIC_POST_URL, formData)
-      .then((res) => {
+      .then(() => {
         openModal();
         setName('');
         setPhoneNumber('');
       })
-      .catch((err) => console.log(err));
+      .finally(() => setLoading(false));
   };
 
   const handleKeyPressed = (event) => {
@@ -91,14 +83,18 @@ const FooterContact: React.FC = () => {
       </footer>
       <Modal
         isOpen={modalIsOpen}
-        style={modalStyles}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
+        contentLabel="Modal de Contato"
+        className={styles.ModalContainer}
       >
         <div className={styles.modal}>
           <div className={styles.modal__wrapper}>
-            <h1>Seu cadastro foi realizado com sucesso!</h1>
+            <h1>
+              Seu cadastro foi realizado
+              <br />
+              com sucesso!
+            </h1>
             <p>
               Em breve entraremos em contato com você pelo telefone informado no
               passo anterior.
@@ -115,6 +111,11 @@ const FooterContact: React.FC = () => {
           </div>
         </div>
       </Modal>
+      {loading && (
+        <div className={styles.loading}>
+          <img src={logoZenite} alt="Logo Zenite" /> Aguarde...
+        </div>
+      )}
     </>
   );
 };

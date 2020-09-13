@@ -1,6 +1,6 @@
-@import "./utils/variables";
-@import "./utils/functions";
-@import "./utils/mixins";
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
 
 #main {
   &__construction {
@@ -15,4 +15,8 @@
       max-width: 900px;
     }
   }
+}
+
+.ReactModal__Overlay {
+  z-index: 150;
 }

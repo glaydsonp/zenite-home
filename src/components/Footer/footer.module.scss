@@ -38,6 +38,16 @@
 
     &_item {
       padding: 3px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
   }
 

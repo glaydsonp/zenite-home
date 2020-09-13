@@ -6,7 +6,8 @@ import ContactHeader from '../ContactHeader';
 
 import Logo from '../../assets/logo-white.svg';
 import CloseIcon from '../../assets/icons/close-icon.svg';
-import LogoZenite from '../../assets/logo.svg';
+import logoZenite from '../../assets/images/logo-zenite-verde.png';
+// import LogoZenite from '../../assets/logo.svg';
 
 import styles from './header.module.scss';
 import MenuLink from '../MenuLink';
@@ -139,8 +140,8 @@ const Header: React.FC<IProps> = ({ type, title }) => {
           {type === 'filled' && (
             <Link href="/residencial">
               <a>
-                <LogoZenite />
-                {/* <img src={logoZeniteUrl} alt="Logo Zenite Clean" /> */}
+                {/* <LogoZenite /> */}
+                <img src={logoZenite} alt="Logo Zenite Clean" />
               </a>
             </Link>
           )}
