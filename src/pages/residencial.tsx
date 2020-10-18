@@ -10,7 +10,6 @@ import ImagemResidencial1 from '../assets/images/01-residencial-limpeza.jpg';
 import ImagemResidencial2 from '../assets/images/02-residencial-higienizacao.jpg';
 import ImagemResidencial3 from '../assets/images/03-residencial-nautica.jpg';
 import ImagemResidencial4 from '../assets/images/04-residencial-posobra.jpg';
-import BackgroundImage from '../assets/images/backgroundImage1.jpg';
 
 const Residencial: React.FC = () => {
   const imagensResidencial = [
@@ -19,32 +18,56 @@ const Residencial: React.FC = () => {
       image: ImagemResidencialPrincipal
     },
     {
-      id: 'r3',
-      image: ImagemResidencial1
-    },
-    {
       id: 'r4',
       image: ImagemResidencial2
     },
     {
       id: 'r5',
-      image: ImagemResidencial3
+      image: '/nautico.jpg'
     },
     {
       id: 'r6',
-      image: ImagemResidencial4
+      image: '/mesa.jpg'
     }
   ];
+
+  const imagensResidencialCarousel = [
+    {
+      id: 'r-principal',
+      image: '/banner-residencial-1.jpg'
+    },
+    {
+      id: 'r-2',
+      image: ImagemResidencial1
+    },
+    {
+      id: 'r3',
+      image: '/banner-residencial-2.jpg'
+    },
+    {
+      id: 'r4',
+      image: '/banner-residencial-3.jpg'
+    },
+    {
+      id: 'r5',
+      image: '/banner-residencial-4.jpg'
+    }
+  ];
+
   return (
     <>
       <Header
         type="transparent"
         title="Zenite Clean - Higienização e Limpeza Residencial"
       />
-      <HeaderNavImages images={imagensResidencial} />
+      <HeaderNavImages
+        images={imagensResidencial}
+        heroTitle="Serviços de A a Z para preservar, limpar, higienizar sua casa e
+              carro"
+      />
       <NossosServicos
         images={imagensResidencial}
-        backgroundImage={BackgroundImage}
+        carouselImages={imagensResidencialCarousel}
       />
       <OutrosServicos />
       <Footer />

@@ -12,8 +12,17 @@ interface IProps {
 }
 
 const ContactHeader: React.FC<IProps> = ({ menuMobile }) => {
-  const phoneNumber = '+55 19 2223-3571';
+  const phoneNumber = '+55 19 98718-4149';
+  // const phoneNumberTruncated = '+5519987184149';
+  const phoneNumberTruncated = 'tel:+5519987184149';
   const email = 'comercialzenite1@gmail.com';
+
+  const navigateTo = (link: string) => {
+    const a = document.createElement('a');
+    a.href = link;
+    a.target = '_blank';
+    a.click();
+  };
 
   // header mobile
   if (menuMobile) {
@@ -23,19 +32,31 @@ const ContactHeader: React.FC<IProps> = ({ menuMobile }) => {
           className={[styles.container, styles.container__mobile].join(' ')}
         >
           <div className={styles.container__wrapper}>
-            <div className={styles.container__wrapperItem}>
+            <div
+              className={styles.container__wrapperItem}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() => navigateTo(phoneNumberTruncated)}
+              onClick={() => navigateTo(phoneNumberTruncated)}
+            >
               <PhoneIcon />
             </div>
-            <div className={styles.container__wrapperItem}>
+            <div
+              className={styles.container__wrapperItem}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() => navigateTo('mailto:comercialzenite1@gmail.com')}
+              onClick={() => navigateTo('mailto:comercialzenite1@gmail.com')}
+            >
               <EmailIcon />
             </div>
             <div className={styles.container__wrapperItem}>
-              <a href="#">
+              <a href="https://instagram.com/zeniteaz?igshid=119enrtsesfum">
                 <InstagramIcon />
               </a>
             </div>
             <div className={styles.container__wrapperItem}>
-              <a href="#">
+              <a href="https://www.facebook.com/zeniteaz/?ref=py_c">
                 <FacebookIcon />
               </a>
             </div>
@@ -51,12 +72,29 @@ const ContactHeader: React.FC<IProps> = ({ menuMobile }) => {
       <header className={styles.container}>
         <div className={styles.container__wrapper}>
           <div className={styles.container__wrapperItem}>{phoneNumber}</div>
-          <div className={styles.container__wrapperItem}>{email}</div>
+          <div
+            className={styles.container__wrapperItem}
+            style={{ cursor: 'pointer' }}
+            role="button"
+            tabIndex={0}
+            onKeyPress={() => navigateTo('mailto:comercialzenite1@gmail.com')}
+            onClick={() => navigateTo('mailto:comercialzenite1@gmail.com')}
+          >
+            {email}
+          </div>
           <div className={styles.container__wrapperItem}>
-            <a href="#">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://instagram.com/zeniteaz?igshid=119enrtsesfum"
+            >
               <InstagramIcon />
             </a>
-            <a href="#">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.facebook.com/zeniteaz/?ref=py_c"
+            >
               <FacebookIcon />
             </a>
           </div>

@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@import '../../styles/main.scss';
 
 .services {
   max-width: 1300px;
@@ -41,7 +41,8 @@
       align-items: center;
       flex-direction: column;
 
-      span {
+      span,
+      a {
         display: block;
         color: $text-black;
         font-size: 2.9rem;
@@ -51,7 +52,8 @@
         }
       }
 
-      strong {
+      strong,
+      a {
         display: block;
         color: $primary;
         font-weight: bold;
@@ -137,7 +139,7 @@
       width: 100vw;
       height: 100%;
       margin-top: 100px;
-      background-image: url("../../assets/images/services-background.svg");
+      background-image: url('../../assets/images/services-background.svg');
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover;
@@ -185,7 +187,8 @@
             }
           }
 
-          span {
+          span,
+          a {
             position: absolute;
             left: 0;
             font-size: 2.5rem;
@@ -214,7 +217,8 @@
           .image__card {
             height: 520px;
 
-            span {
+            span,
+            a {
               top: 10px;
             }
           }
@@ -222,7 +226,8 @@
 
         &:nth-child(2) {
           .image__card {
-            span {
+            span,
+            a {
               bottom: 50px;
             }
           }
@@ -231,7 +236,8 @@
 
       @media (max-width: 751px) {
         .image__card {
-          span {
+          span,
+          a {
             bottom: 20px;
           }
         }
@@ -283,4 +289,20 @@
       }
     }
   }
+}
+
+a.higienizacao,
+a.middle__span,
+a.posObra {
+  color: white;
+  text-decoration: none;
+}
+a.higienizacao:hover,
+a.higienizacao:active,
+a.middle__span:hover,
+a.middle__span:active,
+a.posObra:hover,
+a.posObra:active {
+  color: white;
+  text-decoration: underline;
 }

@@ -8,7 +8,14 @@ const Footer: React.FC = () => (
         <h3>Tudo o que você precisa e muito mais!</h3>
         <div className={styles.content__lists}>
           <div className={styles.list}>
-            <span className={styles.list__title}>Limpeza</span>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://zeniteaz.com.br/blog/index.php/tag/limpeza/"
+              className={styles.list__title}
+            >
+              Limpeza
+            </a>
             <ul>
               <li>- Caixa dágua e reservatório</li>
               <li>- Lavagem de pisos, telhas e pedras</li>
@@ -19,7 +26,14 @@ const Footer: React.FC = () => (
             </ul>
           </div>
           <div className={styles.list}>
-            <span className={styles.list__title}>Sanitização</span>
+            <a
+              href="https://zeniteaz.com.br/blog/index.php/2015/06/12/sanitizacao-de-ambientes/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.list__title}
+            >
+              Sanitização
+            </a>
             <ul>
               <li>- Serviços em veículos, aeronaves, navios e ambientes</li>
               <li>- Dedetização</li>
@@ -29,7 +43,14 @@ const Footer: React.FC = () => (
             </ul>
           </div>
           <div className={styles.list}>
-            <span className={styles.list__title}>Serviços Gerais</span>
+            <a
+              href="https://zeniteaz.com.br/blog/index.php/category/servicos-gerais/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.list__title}
+            >
+              Serviços Gerais
+            </a>
             <ul>
               <li>- Manutenção e cuidados com o sistema de ar condicionado</li>
               <li>- Pós Obra</li>

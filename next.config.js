@@ -14,9 +14,9 @@ const NextAppConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   },
-  trailingSlash: true,
-  basePath: '/zenite-front'
+  trailingSlash: true
 };
+// basePath: '/zenite-front',
 
 /* Export declaration */
 module.exports = withPlugins(
@@ -24,7 +24,7 @@ module.exports = withPlugins(
     [
       withImages({
         esModule: true,
-        assetPrefix: 'https://glaydsonp.com/zenite-front',
+        assetPrefix: 'https://zeniteaz.com.br/',
         webpack(config, options) {
           return config;
         }

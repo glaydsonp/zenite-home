@@ -2,8 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import styles from '../styles/pages/contato.module.scss';
 import GoogleMapsImg from '../assets/icons/google-maps.svg';
-import MailImg from '../assets/icons/mail.jpg';
-import YellowPhoneImg from '../assets/icons/yellow-phone.jpg';
+import MailImg from '../assets/icons/mail.svg';
+import YellowPhoneImg from '../assets/icons/yellow-phone.svg';
 import ContactButton from '../components/ContactButton';
 import FooterContact from '../components/FooterContact/FooterContact';
 
@@ -14,19 +14,22 @@ interface IButton {
 }
 
 const Contact: React.FC = () => {
+  const baseUrl = 'https://api.whatsapp.com/send?';
+  const phoneNumber = 'phone=5519987184149';
+  const queryParams = '&text=Quero%20saber%20mais%20sobre%20a%20Zenite%20';
   const buttons: IButton[] = [
+    // {
+    //   link: '#',
+    //   image: GoogleMapsImg,
+    //   id: 1
+    // },
     {
-      link: '#',
-      image: GoogleMapsImg,
-      id: 1
-    },
-    {
-      link: '#1',
+      link: 'mailto:comercialzenite1@gmail.com',
       image: MailImg,
       id: 2
     },
     {
-      link: '#2',
+      link: `${baseUrl}${phoneNumber}${queryParams}`,
       image: YellowPhoneImg,
       id: 3
     }

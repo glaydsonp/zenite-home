@@ -14,17 +14,20 @@ const CleanessGuide: React.FC = () => {
     {
       id: 1,
       description: 'Quais serviços nós oferecemos?',
-      text: 'Texto teste'
+      text:
+        'Nós da Zenite prestamos serviços de A a Z por isso atendemos tanto empresa quanto residência de: higienização de sofás, colchões e estofados, limpeza de surperficies como telhados, pisos e pedras, sanitização de ambientes desde veículos, aronaves, salas em geral e navios, impermebilização de estofados e tecidos, dedetização e descupinização para uma limpeza profunda para controle de pragas, manutenção de piscina, serviços gerais como pós obra e recolhimento de entulho e manutenção simples como limpeza de caixa dágua, podagem de árvores e capinação química.'
     },
     {
       id: 2,
       description: 'Como fazer orçamento?',
-      text: 'Texto teste'
+      text:
+        'Basta clicar no botão "fale conosco" e selecionar qual melhor forma de contato ou em qualquer uma das páginas selecionar ícone do whatsapp para ser redirecionado ao nosso comercial. Qualquer duvida nos colocamos a disposição!'
     },
     {
       id: 3,
       description: 'Quais cidades atendemos?',
-      text: 'Texto teste'
+      text:
+        'Hoje atuamos especificamente na região metropolitana de Campinas incluindo cidades um pouco mais afastadas como Nova odessa, Americana e Monter mor. Não fique com duvida, entre em contato com a gente!'
     }
   ];
 

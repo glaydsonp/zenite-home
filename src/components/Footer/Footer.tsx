@@ -8,6 +8,12 @@ import LinkedinIcon from '../../assets/icons/linkedin-icon.svg';
 import styles from './footer.module.scss';
 
 const Footer: React.FC = () => {
+  const navigateTo = (link: string) => {
+    const a = document.createElement('a');
+    a.href = link;
+    a.target = '_blank';
+    a.click();
+  };
   const linksSite = [
     {
       id: 1,
@@ -46,11 +52,11 @@ const Footer: React.FC = () => {
     //   description: 'Cursos',
     //   link: ''
     // }
-    // {
-    //   id: 4,
-    //   description: 'Blog',
-    //   link: ''
-    // }
+    {
+      id: 4,
+      description: 'Blog',
+      link: 'https://zeniteaz.com.br/blog/'
+    }
   ];
   return (
     <>
@@ -109,13 +115,51 @@ const Footer: React.FC = () => {
             Acompanhe a gente nas redes sociais
           </div>
           <div className={styles.footer__socials}>
-            <div className={styles.footer__socials_item}>
+            <div
+              className={styles.footer__socials_item}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() =>
+                navigateTo('https://www.facebook.com/zeniteaz/?ref=py_c')
+              }
+              onClick={() =>
+                navigateTo('https://www.facebook.com/zeniteaz/?ref=py_c')
+              }
+            >
               <FacebookIcon />
             </div>
-            <div className={styles.footer__socials_item}>
+            <div
+              className={styles.footer__socials_item}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() =>
+                navigateTo(
+                  'https://instagram.com/zeniteaz?igshid=119enrtsesfum'
+                )
+              }
+              onClick={() =>
+                navigateTo(
+                  'https://instagram.com/zeniteaz?igshid=119enrtsesfum'
+                )
+              }
+            >
               <InstagramIcon />
             </div>
-            <div className={styles.footer__socials_item}>
+            <div
+              className={styles.footer__socials_item}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() =>
+                navigateTo(
+                  'https://www.linkedin.com/company/zenite-servi%C3%A7os-de-a-a-z/?viewAsMember=true'
+                )
+              }
+              onClick={() =>
+                navigateTo(
+                  'https://www.linkedin.com/company/zenite-servi%C3%A7os-de-a-a-z/?viewAsMember=true'
+                )
+              }
+            >
               <LinkedinIcon />
             </div>
           </div>

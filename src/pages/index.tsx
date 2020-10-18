@@ -10,6 +10,11 @@ const Home: React.FC = () => (
 
     <main className={styles.homepage}>
       <div className={styles.homepage__overlay} />
+      <img
+        className={styles.homepage__logo}
+        src="/logo-brancoecinza.svg"
+        alt="Logo Zenite"
+      />
       <div className={styles.homepage__title}>
         Para onde seria este serviço?
       </div>

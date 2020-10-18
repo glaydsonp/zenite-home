@@ -6,14 +6,32 @@ import OutrosServicos from '../components/OutrosServicos';
 import Footer from '../components/Footer';
 
 import ImagemEmpresarialPrincipal from '../assets/images/hero-empresarial.jpg';
-import ImagemEmpresarial1 from '../assets/images/01-residencial-limpeza.jpg';
-import ImagemEmpresarial2 from '../assets/images/02-residencial-higienizacao.jpg';
-import ImagemEmpresarial3 from '../assets/images/03-residencial-nautica.jpg';
+import ImagemEmpresarial1 from '../assets/images/01-empresarial-limpeza.jpg';
+import ImagemEmpresarial2 from '../assets/images/02-empresarial-higienizacao.jpg';
+import ImagemEmpresarial3 from '../assets/images/03-empresarial-nautica.jpg';
 import ImagemEmpresarial4 from '../assets/images/04-residencial-posobra.jpg';
-import BackgroundImage from '../assets/images/backgroundImage1.jpg';
 
 const Empresarial: React.FC = () => {
   const imagensIndustrial = [
+    {
+      id: 'r-principal',
+      image: ImagemEmpresarialPrincipal
+    },
+    {
+      id: 'r4',
+      image: ImagemEmpresarial2
+    },
+    {
+      id: 'r5',
+      image: ImagemEmpresarial3
+    },
+    {
+      id: 'r6',
+      image: ImagemEmpresarial4
+    }
+  ];
+
+  const imagensIndustrialCarousel = [
     {
       id: 'r-principal',
       image: ImagemEmpresarialPrincipal
@@ -35,16 +53,20 @@ const Empresarial: React.FC = () => {
       image: ImagemEmpresarial4
     }
   ];
+
   return (
     <>
       <Header
         type="transparent"
         title="Zenite Clean - Higienização e Limpeza Residencial"
       />
-      <HeaderNavImages images={imagensIndustrial} />
+      <HeaderNavImages
+        images={imagensIndustrial}
+        heroTitle="Serviços de A a Z para seu escritório, industria e empresa"
+      />
       <NossosServicos
         images={imagensIndustrial}
-        backgroundImage={BackgroundImage}
+        carouselImages={imagensIndustrialCarousel}
       />
       <OutrosServicos />
       <Footer />

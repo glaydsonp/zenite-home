@@ -9,29 +9,33 @@ import styles from './nossos-servicos.module.scss';
 
 interface IProps {
   images: IImages[];
-  backgroundImage: string;
+  carouselImages: IImages[];
 }
 
-const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
+const NossosServicos: React.FC<IProps> = ({ images, carouselImages }) => {
   const [image, setImage] = useState<IImages>({
-    ...images[0],
+    ...carouselImages[0],
     active: true
   });
 
   const nextImage = () => {
-    const imageSelectedIndex = images.findIndex((img) => img.id === image.id);
-    if (imageSelectedIndex < images.length - 1) {
-      return images[imageSelectedIndex + 1];
+    const imageSelectedIndex = carouselImages.findIndex(
+      (img) => img.id === image.id
+    );
+    if (imageSelectedIndex < carouselImages.length - 1) {
+      return carouselImages[imageSelectedIndex + 1];
     }
-    return images[0];
+    return carouselImages[0];
   };
 
   const prevImage = () => {
-    const imageSelectedIndex = images.findIndex((img) => img.id === image.id);
+    const imageSelectedIndex = carouselImages.findIndex(
+      (img) => img.id === image.id
+    );
     if (imageSelectedIndex > 0) {
-      return images[imageSelectedIndex - 1];
+      return carouselImages[imageSelectedIndex - 1];
     }
-    return images[images.length - 1];
+    return carouselImages[images.length - 1];
   };
 
   const slide = () => {
@@ -51,7 +55,14 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
         <div className={styles.first__service}>
           <div className={styles.first__service__text}>
             <div className={styles.first__service__title}>
-              <span>Nossos serviços</span> <strong>01 Limpeza</strong>
+              <span>Nossos serviços</span>{' '}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://zeniteaz.com.br/blog/index.php/2015/06/12/lavagem-de-piso-e-telhados/"
+              >
+                <strong>01 Limpeza</strong>
+              </a>
             </div>
             <div className={styles.first__service__description}>
               Nosso processo de lavagem para pisos externos não agride as
@@ -96,8 +107,15 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
           <div className={styles.other__services__wrapper}>
             <div className={styles.other__services__service}>
               <div className={styles.image__card}>
-                <img src={images[2].image} alt="Higieniação" />
-                <span className={styles.higienizacao}>02 Higienização</span>
+                <img src={images[1].image} alt="Higieniação" />
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://zeniteaz.com.br/blog/index.php/2015/06/15/higienizacao-de-sofa/"
+                  className={styles.higienizacao}
+                >
+                  02 Higienização
+                </a>
               </div>
               <div className={styles.image__description}>
                 Utilizamos na nossa formulação um poderoso agente bactericida
@@ -107,8 +125,15 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
             </div>
             <div className={styles.other__services__service}>
               <div className={styles.image__card}>
-                <img src={images[3].image} alt="Linha Náutica" />
-                <span className={styles.middle__span}>03 Linha Náutica</span>
+                <img src={images[2].image} alt="Linha Náutica" />
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://zeniteaz.com.br/blog/index.php/2015/06/12/cuidados-e-limpeza-da-sua-lancha-e-barco/"
+                  className={styles.middle__span}
+                >
+                  03 Linha Náutica
+                </a>
               </div>
               <div className={styles.image__description}>
                 Para garantir que os estofados permaneçam sempre novos, é
@@ -118,8 +143,15 @@ const NossosServicos: React.FC<IProps> = ({ images, backgroundImage }) => {
             </div>
             <div className={styles.other__services__service}>
               <div className={styles.image__card}>
-                <img src={images[4].image} alt="Pós Obra" />
-                <span className={styles.posObra}>04 Pós Obra</span>
+                <img src={images[3].image} alt="Pós Obra" />
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://zeniteaz.com.br/blog/index.php/2020/10/18/limpeza-pos-obra/"
+                  className={styles.posObra}
+                >
+                  04 Pós Obra
+                </a>
               </div>
               <div className={styles.image__description}>
                 Nosso serviço de limpeza é desenvolvido de forma customizada

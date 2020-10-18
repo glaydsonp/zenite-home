@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Logo from '../../assets/logo-white.svg';
+// import Logo from '../../assets/logo-white.svg';
 
 import styles from './header-nav-images.module.scss';
 
@@ -11,11 +11,13 @@ interface IImages {
   image: string;
   active?: boolean;
 }
+
 interface IProps {
   images: IImages[];
+  heroTitle: string;
 }
 
-const HeaderNavImages: React.FC<IProps> = ({ images }) => {
+const HeaderNavImages: React.FC<IProps> = ({ images, heroTitle }) => {
   const [image, setImage] = useState({
     id: images[0].id,
     image: images[0].image,
@@ -52,11 +54,9 @@ const HeaderNavImages: React.FC<IProps> = ({ images }) => {
         <div className={styles.nav__overlay} />
         <div className={styles.nav__content}>
           <div className={styles.nav__contentText}>
-            <Logo />
-            <h3 className={styles.nav__content__subtitle}>
-              Serviços de A a Z para preservar, limpar, higienizar sua casa e
-              carro
-            </h3>
+            {/* <Logo /> */}
+            <img src="/logo-zenite-principal.svg" alt="Logo Zenite" />
+            <h3 className={styles.nav__content__subtitle}>{heroTitle}</h3>
           </div>
           <div className={styles.nav__content__buttons}>
             {images.map((imgButton) => (
